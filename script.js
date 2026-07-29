@@ -1,3 +1,4 @@
+console.log("Script carregado");
 const botaoDiminuir = document.getElementById("diminuir");
 const botaoAumentar = document.getElementById("aumentar");
 const numeroCaracteres = document.getElementById("numero-caracteres");
