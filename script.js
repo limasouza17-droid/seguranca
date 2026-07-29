@@ -6,20 +6,24 @@ let tamanhoSenha = 12;
 
 numeroCaracteres.textContent = tamanhoSenha;
 
+
+// AUMENTAR TAMANHO
 botaoAumentar.addEventListener("click", () => {
     tamanhoSenha++;
     numeroCaracteres.textContent = tamanhoSenha;
 });
 
+
+// DIMINUIR TAMANHO
 botaoDiminuir.addEventListener("click", () => {
-    if (tamanhoSenha > 1) {
+    if (tamanhoSenha > 4) {
         tamanhoSenha--;
         numeroCaracteres.textContent = tamanhoSenha;
     }
 });
 
 
-// BOTÃO GERAR SENHA
+// GERAR SENHA
 const botaoGerar = document.getElementById("gerar-senha");
 const campoSenha = document.getElementById("campo-senha");
 
@@ -27,25 +31,19 @@ botaoGerar.addEventListener("click", () => {
 
     let caracteres = "";
 
-    const maiusculas = document.getElementById("maiusculas");
-    const minusculas = document.getElementById("minusculas");
-    const numeros = document.getElementById("numeros");
-    const simbolos = document.getElementById("simbolos");
-
-
-    if (maiusculas.checked) {
+    if (document.getElementById("maiusculas").checked) {
         caracteres += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
 
-    if (minusculas.checked) {
+    if (document.getElementById("minusculas").checked) {
         caracteres += "abcdefghijklmnopqrstuvwxyz";
     }
 
-    if (numeros.checked) {
+    if (document.getElementById("numeros").checked) {
         caracteres += "0123456789";
     }
 
-    if (simbolos.checked) {
+    if (document.getElementById("simbolos").checked) {
         caracteres += "!@#$%&*";
     }
 
@@ -54,13 +52,12 @@ botaoGerar.addEventListener("click", () => {
 
     for (let i = 0; i < tamanhoSenha; i++) {
 
-        let numeroAleatorio = Math.floor(
-            Math.random() * caracteres.length
-        );
+        const indice = Math.floor(Math.random() * caracteres.length);
 
-        senha += caracteres[numeroAleatorio];
+        senha += caracteres[indice];
 
     }
+
 
     campoSenha.value = senha;
 
