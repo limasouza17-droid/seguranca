@@ -17,3 +17,11 @@ botaoDiminuir.addEventListener("click", () => {
         numeroCaracteres.textContent = tamanhoSenha;
     }
 });
+const botaoGerar = document.getElementById("gerar-senha");
+const campoSenha = document.getElementById("campo-senha");
+
+botaoGerar.addEventListener("click", () => {
+
+    campoSenha.value = "MinhaSenha123!";
+
+});
