@@ -208,3 +208,19 @@ body {
     }
 
 }
+.botao-gerar{
+    margin-top:20px;
+    padding:15px;
+    background:#0075FF;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-family:var(--roboto);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.botao-gerar:hover{
+    background:#005fd1;
+}
