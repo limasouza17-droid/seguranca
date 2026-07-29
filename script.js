@@ -25,6 +25,43 @@ const campoSenha = document.getElementById("campo-senha");
 
 botaoGerar.addEventListener("click", () => {
 
-    campoSenha.value = "MinhaSenha123!";
+    let caracteres = "";
+
+    const maiusculas = document.getElementById("maiusculas");
+    const minusculas = document.getElementById("minusculas");
+    const numeros = document.getElementById("numeros");
+    const simbolos = document.getElementById("simbolos");
+
+
+    if (maiusculas.checked) {
+        caracteres += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+
+    if (minusculas.checked) {
+        caracteres += "abcdefghijklmnopqrstuvwxyz";
+    }
+
+    if (numeros.checked) {
+        caracteres += "0123456789";
+    }
+
+    if (simbolos.checked) {
+        caracteres += "!@#$%&*";
+    }
+
+
+    let senha = "";
+
+    for (let i = 0; i < tamanhoSenha; i++) {
+
+        let numeroAleatorio = Math.floor(
+            Math.random() * caracteres.length
+        );
+
+        senha += caracteres[numeroAleatorio];
+
+    }
+
+    campoSenha.value = senha;
 
 });
