@@ -17,6 +17,9 @@ botaoDiminuir.addEventListener("click", () => {
         numeroCaracteres.textContent = tamanhoSenha;
     }
 });
+
+
+// BOTÃO GERAR SENHA
 const botaoGerar = document.getElementById("gerar-senha");
 const campoSenha = document.getElementById("campo-senha");
 
